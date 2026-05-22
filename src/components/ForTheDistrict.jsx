@@ -4,7 +4,6 @@ import styles from './ForTheDistrict.module.css'
 const benefits = [
   { stat: '65%', label: 'Reduction in substance use when prevention begins before high school', source: 'NIH Research' },
   { stat: '3x', label: 'Greater impact when programs include parent engagement alongside students', source: 'SAMHSA' },
-  { stat: '$18', label: 'Saved in long-term costs for every $1 invested in youth prevention', source: 'RAND Corp.' },
 ]
 
 export default function ForTheDistrict() {
@@ -29,7 +28,7 @@ export default function ForTheDistrict() {
             Why Your District<br /><span className="gold">Should Support RAPP</span>
           </h2>
           <p className={styles.intro}>
-            Supporting RAPP is an investment in the academic performance, safety, and
+            Supporting RAPP means investing in the academic performance, safety, and
             future of every student in your district — and in the families they come home to.
           </p>
         </div>
