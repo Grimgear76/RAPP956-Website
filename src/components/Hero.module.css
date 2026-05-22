@@ -1,0 +1,173 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 60%, rgba(212,160,23,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 7rem 2rem 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  max-width: 900px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logoWrap {
+  filter: drop-shadow(0 0 40px rgba(212,160,23,0.3));
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.logo {
+  width: min(420px, 80vw);
+  height: auto;
+}
+
+.taglineBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.sub {
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  color: rgba(255,255,255,0.7);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  background: var(--gold);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.25rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btnPrimary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.btnComingSoon {
+  border: 1px solid rgba(212,160,23,0.35);
+  color: rgba(212,160,23,0.6);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 2.25rem;
+  border-radius: 2px;
+  cursor: default;
+  user-select: none;
+}
+
+.bottomBar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.divider { color: rgba(212,160,23,0.4); }
+
+.goldText { color: var(--gold); }
+
+.scrollDown {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+  z-index: 2;
+}
+
+.scrollDown:hover { color: var(--gold); }
+
+.scrollArrow {
+  font-size: 1.2rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.scrollLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}

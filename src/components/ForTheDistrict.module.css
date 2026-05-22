@@ -1,0 +1,181 @@
+.section {
+  background: var(--dark-2);
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.header {
+  max-width: 680px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.header.visible { opacity: 1; transform: none; }
+
+.heading {
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.intro {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+
+.impactRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.impactCard {
+  background: var(--dark);
+  border: 1px solid rgba(212,160,23,0.2);
+  border-top: 4px solid var(--gold);
+  padding: 2rem 1.5rem;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.impactCard.visible { opacity: 1; transform: none; }
+
+.impactStat {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.impactLabel {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+}
+
+.impactSource {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pitchBlock {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  background: linear-gradient(135deg, var(--dark-3), var(--mid));
+  border: 1px solid rgba(212,160,23,0.15);
+  padding: 3rem;
+  border-radius: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s;
+}
+
+.pitchBlock.visible { opacity: 1; transform: none; }
+
+.pitchTitle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.25rem;
+}
+
+.pitchList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pitchList li {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.75);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pitchList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.pitchCta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-width: 220px;
+  text-align: center;
+}
+
+.ctaText {
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.9rem 1.75rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.ctaSubtext {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 900px) {
+  .impactRow { grid-template-columns: 1fr; }
+  .pitchBlock { grid-template-columns: 1fr; }
+  .pitchCta { align-items: flex-start; }
+}
